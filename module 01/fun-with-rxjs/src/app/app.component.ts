@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Observable, Observer, interval, of } from 'rxjs';
+import { BehaviorSubject, Observable, Observer, ReplaySubject, Subject, interval, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -37,16 +37,60 @@ export class AppComponent {
     });
   }
 
+  createHotCustomObservable(): Observable<number> {
+    const sub = new Subject<number>();
+    sub.next(42);
+    setTimeout(() => sub.next(100), 1000);
+    setTimeout(() => sub.next(200), 2000);
+    setTimeout(() => sub.next(300), 4000);
+    setTimeout(() => sub.next(500), 6000);
+    setTimeout(() => sub.complete(), 7000);
+
+    return sub;
+  }
+
+  createBehaviorSubject(): Observable<number> {
+    const sub = new BehaviorSubject<number>(42);    
+    setTimeout(() => sub.next(100), 1000);
+    setTimeout(() => sub.next(200), 2000);
+    setTimeout(() => sub.next(300), 4000);
+    setTimeout(() => sub.next(500), 6000);
+    setTimeout(() => sub.complete(), 7000);
+
+    return sub;
+  }
+
+  // -------------- 42 - |
+
+  // ReplaySubject(1)
+
+  createReplaySubject(): Observable<number> {
+    const sub = new ReplaySubject<number>(1);    
+    setTimeout(() => sub.next(100), 1000);
+    setTimeout(() => sub.next(200), 2000);
+    setTimeout(() => sub.next(300), 4000);
+    setTimeout(() => sub.next(500), 6000);
+    setTimeout(() => sub.complete(), 7000);
+
+    return sub;
+  }
+
+
   go() {
     const observerA = this.createObserver('A');
     const observerB = this.createObserver('B');
+    const observerC = this.createObserver('C');
 
-    const observable = this.createCustomObservable();
+    const observable = this.createReplaySubject();
     observable.subscribe(observerA);
 
     setTimeout(() => {
       observable.subscribe(observerB);
-    }, 2500);
+    }, 3500);
+
+    setTimeout(() => {
+      observable.subscribe(observerC);
+    }, 8000);
 
   }
 }

@@ -1,28 +1,30 @@
-import { Component, DestroyRef, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, OnDestroy } from '@angular/core';
 import { CounterService } from '../../services/counter.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-counter-reader',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './counter-reader.component.html',
   styleUrl: './counter-reader.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CounterReaderComponent {
-  value = -1;
+  readonly value$ = this.counterService.getValue();
+
+  justANumber = 42;
 
   constructor(
-    private counterService: CounterService,
-    private destroyRef: DestroyRef
+    private counterService: CounterService, 
   ) {
-    console.log('A new counter reader was created');
-    
-    const subscription = counterService.getValue().subscribe((value) => {
-      this.value = value;
-      console.log('Value changed to ', value);
-    });
-
-    destroyRef.onDestroy(() => {subscription.unsubscribe()});
-
+    setTimeout(() => {
+      this.justANumber = 100;
+      console.log('Changing the number to 100');
+    }, 5000);
   }
+
+
+
 }
+

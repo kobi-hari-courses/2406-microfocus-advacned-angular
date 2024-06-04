@@ -18,7 +18,6 @@ export class AppComponent {
     this.isReaderShowing = !this.isReaderShowing;
   }
 
-
   createObserver(id: string): Observer<number> {
     return {
       next: (value: number) => console.log(`Observer ${id} next value: ${value}`),

@@ -2,13 +2,10 @@
 
 ## Advanced Course Agenda
 * RxJS
-* Signals
-
 * Dependency Injection
 * Redux - Component Store
 * Advanced Directive and Component Authroing
-<!-- * Custom Form Controls -->
 
 
 ## Daily Summaries
-* [Module 01 - Reactive X and RxJs](./Module%2002/README.md)
+* [Module 01 - Reactive X and RxJs](./module%2001/README.md)

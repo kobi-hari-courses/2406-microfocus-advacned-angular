@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BehaviorSubject, Observable, Observer, ReplaySubject, Subject, interval, of } from 'rxjs';
+import { CounterReaderComponent } from "./components/counter-reader/counter-reader.component";
+import { CounterWriterComponent } from "./components/counter-writer/counter-writer.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [RouterOutlet, CounterReaderComponent, CounterWriterComponent, CommonModule]
 })
 export class AppComponent {
+  isReaderShowing = true;
+  toggleReader() {
+    this.isReaderShowing = !this.isReaderShowing;
+  }
+
+
   createObserver(id: string): Observer<number> {
     return {
       next: (value: number) => console.log(`Observer ${id} next value: ${value}`),

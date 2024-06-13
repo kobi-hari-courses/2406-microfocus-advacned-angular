@@ -7,7 +7,7 @@ export class InitService {
     async init(): Promise<void> {
         this.historyService.audit('InitService beginining initialization');
         console.log('InitService beginining initialization');
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 500));
         console.log('InitService completed initialization');
         this.historyService.audit('InitService completed initialization');
     }

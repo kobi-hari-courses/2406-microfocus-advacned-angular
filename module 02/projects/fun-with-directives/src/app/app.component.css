@@ -1,0 +1,16 @@
+[highlight] {
+    text-decoration: red underline;
+}
+
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    margin: 20px;
+}

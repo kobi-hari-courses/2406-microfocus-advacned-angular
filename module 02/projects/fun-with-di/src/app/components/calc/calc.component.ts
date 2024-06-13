@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AdditionService } from '../../services/addition.service';
+import { IAddition } from '../../services/addition.interface';
+import { WrongAdditionService } from '../../services/wrong-addition.service';
 
 @Component({
   selector: 'app-calc',
@@ -10,7 +12,7 @@ import { AdditionService } from '../../services/addition.service';
   providers: []
 })
 export class CalcComponent {
-  constructor(protected additionSerivce: AdditionService){}
+  constructor(protected additionSerivce: AdditionService, protected wrongAdditionService: WrongAdditionService){}
 
   result: number = 0;
 

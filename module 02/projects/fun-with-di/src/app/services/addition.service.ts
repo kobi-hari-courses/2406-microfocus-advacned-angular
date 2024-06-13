@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HistoryService } from "./history.service";
+import { IAddition } from "./addition.interface";
 
 @Injectable()
-export class AdditionService {
+export class AdditionService implements IAddition {
   readonly id: number;
 
   constructor(private history: HistoryService) { 

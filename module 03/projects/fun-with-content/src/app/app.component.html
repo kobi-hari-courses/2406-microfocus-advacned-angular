@@ -1,4 +1,31 @@
 
+<button (click)="counter = counter + 1">+</button>
+<button (click)="counter = counter - 1">-</button>
+
+<span>Start with:</span>
+<button (click)="starter = starter + 1">+</button>
+<button (click)="starter = starter - 1">-</button>
+
+<h1 *myRepeat="counter; startWith starter let i; let f = first">{{i}}. Hello world @if(f){(!!!)}</h1>
+
+<hr>
+
+<ng-template [myRepeat]="counter" [myRepeatStartWith]="starter" let-i let-f="first">
+  <h1>{{i}}. Hello world
+    @if(f){!!!}
+  </h1>
+</ng-template>
+
+
+
+<ng-template ngFor let-i [ngForOf]="[1, 2, 3]">
+  <span></span>
+</ng-template>
+
+<span *ngFor="let i of [1, 2, 3]; let ind = index; let o = odd; let isLast = last"></span>
+
+
+<!-- 
 <div class="selectors">
   <app-string-selector [options]="options" [(selected)]="selectedColor">
       <span *itemTemplate="let item" [style.color]="item">{{item}}</span>
@@ -30,4 +57,4 @@
     <li>No need for the third bullet, I am not doing the first two anyway</li>
   </ul>
   <h1>Second H1</h1>
-</app-expander>
+</app-expander> -->

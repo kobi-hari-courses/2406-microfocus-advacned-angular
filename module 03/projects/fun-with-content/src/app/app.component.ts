@@ -13,6 +13,9 @@ import { KobiDirective } from './directives/kobi.directive';
     imports: [RouterOutlet, SharedModule, BlankComponent, CommonModule, KobiDirective]
 })
 export class AppComponent {
+  counter = 3;
+  starter = 6;
+
   showH1 = true;
   toggle() {
     this.showH1 = !this.showH1;

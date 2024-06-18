@@ -6,6 +6,7 @@ import { ExpanderToggleComponent } from "./expander/expander-toggle/expander-tog
 import { StringSelectorComponent } from "./string-selector/string-selector.component";
 import { MyIfDirective } from "../directives/my-if.directive";
 import { ItemTemplateDirective } from "./string-selector/item-template.directive";
+import { MyRepeatDirective } from "../directives/my-repeat.directive";
 
 const declarations = [
     ExpanderComponent, 
@@ -13,7 +14,8 @@ const declarations = [
     ExpanderToggleComponent, 
     StringSelectorComponent, 
     MyIfDirective, 
-    ItemTemplateDirective
+    ItemTemplateDirective, 
+    MyRepeatDirective
 
 ];
 

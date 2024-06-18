@@ -9,11 +9,13 @@
 </div>
 
 <div class="area button-area">
-    <button (click)="toggle()">
+    <ng-content select="[expander-toggle]"/>
+
+    <!-- <button (click)="toggle()">
         @if (isExpanded) {
             -
         } @else {
             +
         }
-    </button>
+    </button> -->
 </div>

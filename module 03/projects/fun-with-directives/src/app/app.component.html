@@ -1,0 +1,8 @@
+<div class="playground" mouseFollow  #myMouse="mouse">
+  <div class="ball" 
+    [style.top.px]="myMouse.y"
+    [style.left.px]="myMouse.x"
+  ></div>
+</div>
+
+<button (click)="bla(myMouse)">Click me</button>

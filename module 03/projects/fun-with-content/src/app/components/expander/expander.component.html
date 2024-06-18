@@ -1,21 +1,17 @@
 <div class="area header-area">
-    <ng-content select="[expander-header]"></ng-content>
+  <ng-content select="[expander-header]"></ng-content>
 </div>
 
 <div class="area content-area">
-    @if (isExpanded) {
-        <ng-content></ng-content>
-    }
+  @if (isExpanded) {
+  <ng-content></ng-content>
+  }
 </div>
 
 <div class="area button-area">
-    <ng-content select="[expander-toggle]"/>
-
-    <!-- <button (click)="toggle()">
-        @if (isExpanded) {
-            -
-        } @else {
-            +
-        }
-    </button> -->
+  @if(expanderToggle()) {
+  <ng-content select="[expander-toggle]" />
+  } @else {
+  <button (click)="toggle()">@if (isExpanded) { - } @else { + }</button>
+  }
 </div>

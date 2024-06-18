@@ -8,18 +8,20 @@
 
     border: 1px solid black;
 
+    --p-header-color: var(--expander-header-bg, lightblue);
+
 }
 
 .header-area {
     grid-area: hdr;
-    background-color: lightblue;
+    background-color: var(--p-header-color);
     padding: 4px;
 }
 
 .button-area {
     grid-area: btn;
     padding: 4px;
-    background-color: lightblue;
+    background-color: var(--p-header-color);
 }
 
 .content-area {

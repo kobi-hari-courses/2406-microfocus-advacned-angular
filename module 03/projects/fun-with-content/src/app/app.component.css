@@ -10,3 +10,8 @@ img {
     object-fit: contain;
     margin-inline-end: 10px;
 }
+
+.x {
+    --expander-header-bg: magenta;
+}
+

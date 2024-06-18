@@ -1,0 +1,28 @@
+:host {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    ' btn hdr' 
+    ' cnt cnt';
+
+    border: 1px solid black;
+
+}
+
+.header-area {
+    grid-area: hdr;
+    background-color: lightblue;
+    padding: 4px;
+}
+
+.button-area {
+    grid-area: btn;
+    padding: 4px;
+    background-color: lightblue;
+}
+
+.content-area {
+    grid-area: cnt;
+    padding: 4px;
+}   

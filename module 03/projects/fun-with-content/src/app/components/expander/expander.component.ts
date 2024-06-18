@@ -6,9 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './expander.component.css'
 })
 export class ExpanderComponent {
-  @Input() header: string = '';
-  @Input() content: string = '';
-
   isExpanded: boolean = true;
 
   toggle() {

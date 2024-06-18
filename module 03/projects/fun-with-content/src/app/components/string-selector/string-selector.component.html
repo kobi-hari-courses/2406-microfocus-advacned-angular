@@ -1,0 +1,11 @@
+@for(option of options(); track option) {
+    <div [class.selected]="option === selected()" (click)="onSelect(option)">
+        @if(itemTemplateDirective()?.template) {
+            <ng-container *ngTemplateOutlet="itemTemplateDirective()!.template; context: {$implicit: option}"/>
+
+        } @else {
+            {{option}}
+        }
+    </div>
+
+}

@@ -1,71 +1,17 @@
-<app-expander header="the header" class="x">
-  <button expander-toggle>
-    <span expander-collapsed>More...</span>
-    <span expander-expanded>Less...</span>
-  </button>
 
-  <div expander-header>
-    <img src="assets/earth.png">
-    Hello World
-  </div>
-    <h2>This is some rich content</h2>
-  <h1>Hello world</h1>
-  <h2>This is some rich content</h2>
-  <h3>Todays tasks</h3>
-  <ul>
-    <li>Clean the dishes</li>
-    <li>Do the laundry</li>
-    <li>No need for the third bullet, I am not doing the first two anyway</li>
-  </ul>
-  <h1>Second H1</h1>
-</app-expander>
+<div class="selectors">
+  <app-string-selector [options]="options" [(selected)]="selectedColor">
+      <span *itemTemplate="let item" [style.color]="item">{{item}}</span>
+  </app-string-selector>
 
-<app-expander header="the header">
-  <button expander-toggle>
-    <span expander-collapsed>More...</span>
-    <span expander-expanded>Less...</span>
-  </button>
+  <app-string-selector [options]="sizes" [(selected)]="selectedSize">
+      <span *itemTemplate="let item" [style.font-size]="item">{{item}}</span>
+  </app-string-selector>
 
-  <div expander-header>
-    <img src="assets/earth.png">
-    Hello World
-  </div>
-    <h2>This is some rich content</h2>
-  <h1>Hello world</h1>
-  <h2>This is some rich content</h2>
-  <h3>Todays tasks</h3>
-  <ul>
-    <li>Clean the dishes</li>
-    <li>Do the laundry</li>
-    <li>No need for the third bullet, I am not doing the first two anyway</li>
-  </ul>
-  <h1>Second H1</h1>
-</app-expander>
+</div>
 
 <app-expander header="the header" class="x">
-  <button expander-toggle>
-    <span expander-collapsed>More...</span>
-    <span expander-expanded>Less...</span>
-  </button>
-
-  <div expander-header>
-    <img src="assets/earth.png">
-    Hello World
-  </div>
-    <h2>This is some rich content</h2>
-  <h1>Hello world</h1>
-  <h2>This is some rich content</h2>
-  <h3>Todays tasks</h3>
-  <ul>
-    <li>Clean the dishes</li>
-    <li>Do the laundry</li>
-    <li>No need for the third bullet, I am not doing the first two anyway</li>
-  </ul>
-  <h1>Second H1</h1>
-</app-expander>
-
-<app-expander header="the header">
-  <button expander-toggle>
+  <button expander-toggle [style.background]="selectedColor()" [style.font-size]="selectedSize()">
     <span expander-collapsed>More...</span>
     <span expander-expanded>Less...</span>
   </button>
